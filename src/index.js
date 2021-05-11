@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+/*
+ * 讓各家瀏覽器一致的樣式
+ * >>> npm install --save normalize.css
+ */
+import 'normalize.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
