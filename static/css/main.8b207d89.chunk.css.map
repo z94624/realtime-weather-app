@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AACA,UACC,QAAS,CACT,SAGD,CACA,gBAHC,WAAY,CACZ,UAKD","file":"main.8b207d89.chunk.css","sourcesContent":["/* 讓所有元件可以撐滿整個畫面 */\nhtml, body {\n\tmargin: 0;\n\tpadding: 0;\n\theight: 100%;\n\twidth: 100%;\n}\n#root {\n\theight: 100%;\n\twidth: 100%;\n}"]}
