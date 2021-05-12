@@ -1,25 +1,38 @@
+// PWA 的說明檔
+
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "short_name": "台灣好天氣", // App 簡稱
+  "name": "台灣好天氣 - 即時縣市天氣", // App 名稱
+  "icons": [ // 因應不同尺寸的裝置螢幕
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "icon@48.png",
+      "sizes": "48x48",
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "icon@96.png",
+      "sizes": "96x96",
+      "type": "image/png"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "icon@144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "icon@192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon@512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "start_url": ".", // 使用者點開 App 時要打開頁面的相對路徑
+  "display": "standalone", // 最上方不顯示網址列
+  "orientation": "portrait-primary", // 直式 或 橫式
+  "theme_color": "#1f2022", // App 載入時顯示的顏色
+  "background_color": "#1f2022"
 }
