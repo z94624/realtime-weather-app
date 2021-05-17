@@ -29,30 +29,34 @@ const WeatherCardWrapper = styled.div`
   padding: 30px 15px;
 `;
 const Location = styled.div`
-  font-size: 28px;
+  font-size: 36px;
   color: ${({ theme }) => theme.titleColor};
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;
 const Description = styled.div`
-  font-size: 16px;
+  font-size: 18px;
   color: ${({ theme }) => theme.textColor};
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 `;
 const CurrentWeather = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 `;
 const Temperature = styled.div`
-  color: ${({ theme }) => theme.temperatureColor};
-  font-size: 96px;
-  font-weight: 300;
+  color: ${({ theme, degree }) => {
+    if (degree >= 36) {return theme.temperatureColorHot;}
+    else if (degree > 10 && degree < 36) {return theme.temperatureColor;}
+    else if (degree <= 10) {return theme.temperatureColorFreeze;}
+  }};
+  font-size: 120px;
+  font-weight: 1000;
   display: flex;
 `;
 const Celsius = styled.div`
   font-weight: normal;
-  font-size: 42px;
+  font-size: 40px;
 `;
 /*
  * 對特定元件調整樣式
@@ -63,7 +67,7 @@ const AirFlow = styled.div`
   font-size: 16x;
   font-weight: 300;
   color: ${({ theme }) => theme.textColor};
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   svg {
     width: 25px;
@@ -107,8 +111,8 @@ const Refresh = styled.div`
 
   svg {
     margin-left: 10px;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     /* 定義旋轉動畫效果 */
     animation: rotate infinite 1.5s linear;
@@ -121,8 +125,8 @@ const Cog = styled(CogIcon)`
   position: absolute;
   top: 30px;
   right: 15px;
-  width: 15px;
-  height: 15px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
 `;
 
@@ -146,7 +150,7 @@ const WeatherCard = ({cityName, weatherElement, moment, fetchData, handleCurrent
             <Location>{cityName}</Location>
             <Description>{description} {comfortability}</Description>
             <CurrentWeather>
-                <Temperature>
+                <Temperature degree={Math.round(temperature)}>
                     {Math.round(temperature)} <Celsius>°C</Celsius>
                 </Temperature>
                 {/* 使用 WeatherIcon 元件 */}
