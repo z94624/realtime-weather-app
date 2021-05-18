@@ -8,7 +8,7 @@ import styled from '@emotion/styled';
 import dayjs from 'dayjs';
 /*
  * 載入 SVG 圖示
- * >>> 使用 create-react-app 建立的專案才可使用此法
+ * >>> 使用 create-react-app 建立的專案才可使用元件 ReactComponent
  */
 import { ReactComponent as RainIcon } from './../images/rain.svg';
 import { ReactComponent as AirFlowIcon } from './../images/airFlow.svg';
@@ -120,7 +120,10 @@ const Refresh = styled.div`
     animation-duration: ${({isLoading}) => (isLoading ? '1.5s' : '0s')};
   }
 `;
-// 齒輪 = 設定頁按鈕
+/*
+ * 對元件新增樣式 styled(Component) 為新元件
+ * 齒輪 = 設定頁按鈕
+ */
 const Cog = styled(CogIcon)`
   position: absolute;
   top: 30px;
