@@ -17,7 +17,7 @@ export const getMoment = (locationName) => {
   const nowDate = Intl.DateTimeFormat('zh-TW', {
     year: 'numeric',
     month: '2-digit',
-    day: '2-digit',
+    day: '2-digit'
   })
     .format(now)
     .replace(/\//g, '-');
